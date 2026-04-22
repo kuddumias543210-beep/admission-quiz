@@ -162,7 +162,69 @@
     note: "উচ্চ চাপে তরলীকৃত পেট্রোলিয়াম গ্যাস রান্নার কাজে ব্যবহৃত হয়।"
   }
 ];
+const questionEl = document.getElementById('question');
+const optionsContainer = document.querySelector('.options');
+const submitBtn = document.getElementById('submit-btn');
+const quizContainer = document.querySelector('.quiz-container');
 
-console.log(bdChemistryQuiz); </script>
+let currentQuiz = 0;
+let score = 0;
+let selectedOptionText = null;
+     function loadQuiz() {
+    selectedOptionText = null;
+    optionsContainer.innerHTML = ''; 
+
+    const currentQuizData = bdChemistryQuiz[currentQuiz]; // এখানে আপনার ভেরিয়েবল নাম bdChemistryQuiz নিশ্চিত করুন
+    questionEl.innerText = currentQuizData.question;
+
+    currentQuizData.options.forEach(option => {
+        const button = document.createElement('button');
+        button.innerText = option;
+        button.classList.add('option-btn');
+        
+        button.addEventListener('click', (e) => {
+            document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+            e.target.classList.add('selected');
+            selectedOptionText = e.target.innerText;
+        });
+
+        optionsContainer.appendChild(button);
+    });
+
+    submitBtn.innerText = currentQuiz === bdChemistryQuiz.length - 1 ? "ফলাফল দেখুন" : "পরবর্তী প্রশ্ন";
+     }
+     submitBtn.addEventListener('click', () => {
+    if (!selectedOptionText) {
+        alert("দয়া করে একটি উত্তর নির্বাচন করুন!");
+        return;
+    }
+
+    if (selectedOptionText === bdChemistryQuiz[currentQuiz].answer) {
+        score++;
+    }
+
+    currentQuiz++;
+
+    if (currentQuiz < bdChemistryQuiz.length) {
+        loadQuiz();
+    } else {
+        showResult();
+    }
+});
+
+function showResult() {
+    quizContainer.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+            <h2>কুইজ সমাপ্ত!</h2>
+            <p>আপনার স্কোর: <strong>${score}</strong> / ${bdChemistryQuiz.length}</p>
+            <button class="submit-btn" onclick="location.reload()">আবার শুরু করুন</button>
+        </div>
+    `;
+}
+
+// সবচেয়ে গুরুত্বপূর্ণ লাইন: কুইজ শুরু করার জন্য এটি অবশ্যই লাগবে
+loadQuiz();
+
+ </script>
 </body>
 </html>
