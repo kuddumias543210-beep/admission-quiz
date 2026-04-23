@@ -1,4 +1,4 @@
-/* গুগল থেকে সুন্দর বাংলা ফন্ট ইমপোর্ট করা হলো */
+/* Built by Nakul Chandro */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap');
 
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-    background-color: #f0f4f8; /* চোখের জন্য আরামদায়ক ব্যাকগ্রাউন্ড কালার */
+    background-color: #f0f4f8; /* Built by Nakul Chandro */
     color: #333;
     display: flex;
     flex-direction: column;
@@ -17,9 +17,9 @@ body {
     min-height: 100vh;
 }
 
-/* হেডার ডিজাইন */
+/* Built by Nakul Chandro */
 .header {
-    background-color: #1a365d; /* গাঢ় নীল রঙ, যা একটু প্রফেশনাল লুক দেয় */
+    background-color: #1a365d; /* Built by Nakul Chandro */
     color: white;
     width: 100%;
     padding: 25px 20px;
@@ -37,7 +37,7 @@ body {
     color: #cbd5e1;
 }
 
-/* কুইজ বক্সের ডিজাইন */
+/* Built by Nakul Chandro */
 .quiz-container {
     background-color: white;
     width: 90%;
@@ -55,7 +55,7 @@ body {
     line-height: 1.5;
 }
 
-/* অপশন বাটনের ডিজাইন */
+/* Built by Nakul Chandro */
 .options {
     display: flex;
     flex-direction: column;
@@ -75,13 +75,13 @@ body {
     color: #4a5568;
 }
 
-/* মাউস নিলে বাটনের পরিবর্তন */
+/* Built by Nakul Chandro */
 .option-btn:hover {
     background-color: #e2e8f0;
     border-color: #cbd5e1;
 }
 
-/* সিলেক্ট হওয়া অবস্থার জন্য একটি ক্লাস (পরে জাভাস্ক্রিপ্টে কাজে লাগবে) */
+/* Built by Nakul Chandro */
 .option-btn.selected {
     background-color: #ebf8ff;
     border-color: #3182ce;
@@ -89,9 +89,9 @@ body {
     font-weight: 600;
 }
 
-/* পরবর্তী বাটনের ডিজাইন */
+/* Built by Nakul Chandro */
 .submit-btn {
-    background-color: #38a169; /* সবুজ রঙ */
+    background-color: #38a169; /* Built by Nakul Chandro */
     color: white;
     border: none;
     padding: 16px;
@@ -107,7 +107,7 @@ body {
     background-color: #2f855a;
 }
 
-/* মোবাইল ফোনের জন্য রেসপনসিভ ডিজাইন */
+/* Built by Nakul Chandro */
 @media (max-width: 600px) {
     .quiz-container {
         padding: 25px 20px;
